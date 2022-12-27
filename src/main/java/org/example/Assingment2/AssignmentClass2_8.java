@@ -14,23 +14,27 @@ public class AssignmentClass2_8 {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
 
+        AssignmentClass2_8.getCount(s);
+    }
+
+    public static void getCount(String s){
         int space = 0,digit = 0, alpha = 0, other = 0;
 
         //checking each characters in string
         for (int i =0; i < s.length(); i++) {
             //check the character is space
-           if(Character.isWhitespace(s.charAt(i))){
-               space ++;
-               //check the character is digit
-           } else if (Character.isDigit(s.charAt(i))) {
-               digit ++;
-               //check the character is alphabet
-           } else if (Character.isAlphabetic(s.charAt(i))) {
-               alpha ++;
-               //check the character is other characters
-           } else{
-               other ++;
-           }
+            if(Character.isWhitespace(s.charAt(i))){
+                space ++;
+                //check the character is digit
+            } else if (Character.isDigit(s.charAt(i))) {
+                digit ++;
+                //check the character is alphabet
+            } else if (Character.isAlphabetic(s.charAt(i))) {
+                alpha ++;
+                //check the character is other characters
+            } else{
+                other ++;
+            }
         }
         //printing all the counts
         System.out.println("Number of spaces : "+space);
@@ -38,4 +42,7 @@ public class AssignmentClass2_8 {
         System.out.println("Number of alphabets : "+alpha);
         System.out.println("Number of other elements : "+other);
     }
+
+
 }
+
