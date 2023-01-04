@@ -14,7 +14,7 @@ public class AssignmentClass2_8 {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
 
-        AssignmentClass2_8.getCount(s);
+        getCount(s);
     }
 
     public static void getCount(String s){
