@@ -7,10 +7,18 @@ import java.util.Scanner;
  * @since 06-01-2023
  */
 public class StudentClass {
+
+    char grade;
     int rollno;
     String name, address;
     int [] mark = new int[5];
-    char grade;
+
+    public StudentClass(int rollno, String name, String address, int[] mark) {
+        this.rollno = rollno;
+        this.name = name;
+        this.address = address;
+        this.mark = mark;
+    }
 
     /**
      * main function
@@ -18,35 +26,27 @@ public class StudentClass {
      * @return void
      */
     public static void main(String [] args){
-        StudentClass s = new StudentClass();
-        s.getData();
-
-        s.grade = s.gradeCalculation(s.mark);
-        System.out.println("Grade :"+s.grade);
-
-        s.showData();
-    }
-
-    /**
-     * get details of student
-     * @return void
-     */
-    public void getData(){
         System.out.println("Enter rollno");
         Scanner sc = new Scanner(System.in);
-        rollno = sc.nextInt();
+        int rollno = sc.nextInt();
 
         System.out.println("Enter name of student");
-        name =sc.next();
+        String name =sc.next();
 
         System.out.println("Enter address of student");
-        address = sc.next();
+        String address = sc.next();
 
         System.out.println("Enter marks of 5 subjects");
+        int [] mark = new int[5];
         for(int i=0; i < 5; i++){
             mark[i] = sc.nextInt();
         }
+
+        StudentClass s = new StudentClass(rollno,name,address,mark);
+        s.grade = s.gradeCalculation(mark);
+        s.showData();
     }
+
 
     /**
      * calculation of mark and get grade
@@ -75,13 +75,13 @@ public class StudentClass {
      * show all data of student
      */
     public void showData(){
-        System.out.println("Roll number : "+rollno);
-        System.out.println("Name of student :"+name);
-        System.out.println("Address of student :"+address);
+        System.out.println("Roll number : "+this.rollno);
+        System.out.println("Name of student :"+this.name);
+        System.out.println("Address of student :"+this.address);
         System.out.println("Marks of student : ");
-        for (int i:mark) {
+        for (int i:this.mark) {
             System.out.println(i);
         }
-        System.out.println("Grade of student : "+grade);
+        System.out.println("Grade of student : "+this.grade);
     }
 }
