@@ -13,7 +13,7 @@ public class StudentClass {
     String name, address;
     int [] mark = new int[5];
 
-    Scanner sc = new Scanner(System.in);
+
 
 
     public int getRollno() {
@@ -39,17 +39,25 @@ public class StudentClass {
      */
     public static void main(String [] args){
         StudentClass s = new StudentClass();
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter rollno");
-        s.setRollno();
+        int roll = sc.nextInt();
+        s.setRollno(roll);
 
         System.out.println("Enter name of student");
-        s.setName();
+        String name = sc.next();
+        s.setName(name);
 
         System.out.println("Enter address of student");
-        s.setAddress();
+        String address = sc.next();
+        s.setAddress(address);
 
         System.out.println("Enter marks of 5 subjects");
-        s.setMark();
+        int [] mark = new int[5];
+        for(int i=0; i < 5; i++) {
+            mark[i] = sc.nextInt();
+        }
+        s.setMark(mark);
 
 
         s.grade = s.gradeCalculation(s.getMark());
@@ -63,22 +71,20 @@ public class StudentClass {
     }
 
 
-    public void setRollno() {
-        this.rollno = sc.nextInt();
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
     }
 
-    public void setName() {
-        this.name = sc.next();
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setAddress() {
-        this.address = sc.next();
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setMark() {
-        for(int i=0; i < 5; i++) {
-            this.mark[i] = sc.nextInt();
-        }
+    public void setMark(int[] mark) {
+        this.mark = mark;
     }
 
     /**
