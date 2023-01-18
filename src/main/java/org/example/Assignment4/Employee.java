@@ -47,18 +47,18 @@ class ProjectManager extends Employee {
 class MainEmployee {
 
     public static void main(String [] args){
-        Employee jr;
-        jr = new JuniorDeveloper();
-        jr.salary();
-        jr.workingHour();
+        Employee emp;
+        emp = new JuniorDeveloper();
+        emp.salary();
+        emp.workingHour();
 
-        Employee tl = new TeamLeader();
-        tl.salary();
-        tl.workingHour();
+        emp = new TeamLeader();
+        emp.salary();
+        emp.workingHour();
 
-        Employee pm = new ProjectManager();
-        pm.salary();
-        pm.workingHour();
+        emp = new ProjectManager();
+        emp.salary();
+        emp.workingHour();
 
     }
 
