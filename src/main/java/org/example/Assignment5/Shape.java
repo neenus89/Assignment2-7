@@ -16,13 +16,7 @@ class Circle extends Shape {
         System.out.println("Area of circle"+area);
     }
 
-    void volume(){
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("Enter radius");
-        int radius = sc.nextInt();
-        double vol = 4.3 * 3.14 * radius *radius * radius;
-        System.out.println("Volume of circle"+vol);
-    }
+    void volume(){}
 }
 
 class Rectangle extends Shape {
@@ -36,17 +30,7 @@ class Rectangle extends Shape {
         System.out.println("Area of rectangle"+area);
     }
 
-    void volume(){
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("Enter length");
-        int length = sc.nextInt();
-        System.out.println("Enter width");
-        int width = sc.nextInt();
-        System.out.println("Enter height");
-        int height = sc.nextInt();
-        double vol =  length *height * width;
-        System.out.println("Volume of rectangle"+vol);
-    }
+    void volume(){}
 }
 
 class Square extends Shape {
@@ -59,14 +43,7 @@ class Square extends Shape {
         System.out.println("Area of square"+area);
     }
 
-    void volume(){
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("Enter length");
-        int length = sc.nextInt();
-
-        double vol =  length *length * length;
-        System.out.println("Volume of square"+vol);
-    }
+    void volume(){}
 }
 
 class Cube extends Shape {
