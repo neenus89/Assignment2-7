@@ -8,7 +8,7 @@ public class Calculator {
     }
     public static void main(String [] args){
         int result = 0;
-        try {
+
             Scanner sc = new Scanner(System.in);
 
             System.out.println("Enter the first number");
@@ -34,19 +34,21 @@ public class Calculator {
                     result = a * b;
                     break;
                 case DIVISION:
+                    try {
                         result = a / b;
+                    } catch (ArithmeticException e){
+                        System.out.println("arithmatic exception");
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("number format exception");
+                    }finally {
+                        System.out.println("result  : " + result);
+                    }
                     break;
                 default:
                     break;
             }
-        }
-        catch (ArithmeticException e){
-            System.out.println("arithmatic exception");
-        }
-        catch (NumberFormatException e) {
-            System.out.println("number format exception");
-        }finally {
-            System.out.println("result  : " + result);
-        }
+
+
     }
 }
