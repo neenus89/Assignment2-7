@@ -29,15 +29,15 @@ public class StudentMain {
         this.grade = sc.next().charAt(0);
         try {
             if (age < 10) {
-                throw new EligibilityCriteria();
+                throw new EligibilityCriteria("Age less than 10");
             }
             if(grade == 'E' || grade == 'F' || grade == 'D') {
-                throw new EligibilityCriteria();
+                throw new EligibilityCriteria("Grade is not eligible");
             }
 
         }
         catch (EligibilityCriteria e){
-            System.out.println(e.toString());
+            System.out.println(e);
         }
     }
 
@@ -48,7 +48,11 @@ public class StudentMain {
 }
 
 class EligibilityCriteria extends Exception {
-    public EligibilityCriteria(){
-        System.out.println("Not eligible");
+    String msg;
+    EligibilityCriteria(String msg) {
+        this.msg=msg;
+    }
+    public String toString(){
+        return ("Status  = "+msg) ;
     }
 }
