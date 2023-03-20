@@ -37,7 +37,7 @@ public class StudentMain {
 
         }
         catch (EligibilityCriteria e){
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
